@@ -7,16 +7,16 @@ const mono = Geist_Mono({ variable: "--font-mono", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Carina — AI Command Center",
-  description: "Speak with Carina, coordinate your AI agents and projects, connect OpenClaw, and track token gains.",
+  description: "An interactive concept for voice, agent coordination, projects, and operational signals.",
   openGraph: {
     title: "Carina — AI Command Center",
-    description: "Voice, agents, projects, and token gains in one private command center.",
+    description: "A human-centered interface concept for coordinating AI systems.",
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "Carina AI command center" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Carina — AI Command Center",
-    description: "Voice, agents, projects, and token gains in one private command center.",
+    description: "A human-centered interface concept for coordinating AI systems.",
     images: ["/og.png"],
   },
 };
