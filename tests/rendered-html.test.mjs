@@ -29,12 +29,16 @@ test("server-renders the Carina command center", async () => {
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /<title>Carina — AI Command Center<\/title>/i);
-  assert.match(html, /CARINA VOICE/);
-  assert.match(html, /AGENT NETWORK/);
+  assert.match(html, /<title>Carina — AI Command Center Demo<\/title>/i);
+  assert.match(html, /HOSTED DEMO/);
+  assert.match(html, /LOCAL LIVE/);
+  assert.match(html, /CARINA VOICE · DEMO CONTROL/);
+  assert.match(html, /AGENT CONCEPTS/);
   assert.match(html, /SYSTEMS ENGINE/);
-  assert.match(html, /Start talking to Carina/);
-  assert.match(html, /Say “Hey mami” to activate/);
+  assert.match(html, /Preview demo listening animation/);
+  assert.match(html, /no microphone or agent backend connected/i);
+  assert.doesNotMatch(html, />\s*LIVE\s*</i);
+  assert.doesNotMatch(html, /\$\d/);
 });
 
 test("keeps interaction and accessibility controls in source", async () => {
@@ -45,9 +49,13 @@ test("keeps interaction and accessibility controls in source", async () => {
   ]);
 
   assert.match(page, /useState/);
-  assert.match(page, /"Start talking to Carina"/);
+  assert.match(page, /"Preview demo listening animation"/);
   assert.match(page, /aria-label=\{`Message \$\{selectedAgent\}`\}/);
-  assert.match(page, /Mami stop/);
+  assert.match(page, /LOCAL LIVE/);
+  assert.match(page, /Not configured/);
+  assert.doesNotMatch(page, /4 agents online/);
+  assert.doesNotMatch(page, /Connected · Leandro/);
+  assert.doesNotMatch(page, /TOTAL TOKEN VALUE/);
   assert.match(css, /prefers-reduced-motion:\s*reduce/);
-  assert.match(layout, /title:\s*"Carina — AI Command Center"/);
+  assert.match(layout, /title:\s*"Carina — AI Command Center Demo"/);
 });

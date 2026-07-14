@@ -1,19 +1,25 @@
 # Carina AI Command Center
 
-An interactive systems-interface concept for supervising AI agents, projects, approvals, and operational signals from one focused workspace.
+An interactive front-end demo for exploring how AI agents, projects, approvals, and operational signals could be supervised from one focused workspace.
+
+## Demo versus local live
+
+The hosted interface is an interactive demo. Its agents, projects, events, activity points, voice state, OpenClaw state, and phone-bridge state are simulated in the browser. It does not capture microphone audio, connect to a phone, run automations, call agent backends, expose a wallet, or display real financial values.
+
+The interface labels this clearly as `HOSTED DEMO — ACTIVE` and `LOCAL LIVE — NOT CONNECTED`. A future local-live mode will require an authenticated orchestration backend and explicit local credentials; that backend is not part of this repository yet.
 
 ## Highlights
 
-- Voice-style wake and stop controls with clear listening states.
+- Voice-style wake and stop controls that preview listening animations without capturing audio.
 - A multi-agent routing view for Maya, Karina, Hermes, and Codex.
 - Project progress, activity, and system-health surfaces.
 - A visual systems engine with animated event flow.
-- Token-ledger and holdings demonstrations for exploring information hierarchy.
+- Sample activity scores and points for exploring information hierarchy without monetary claims.
 - Responsive layouts and reduced-motion support.
 
 ## Current boundary
 
-Carina is a polished front-end prototype. Agent activity, token balances, holdings, and runtime events in the interface are demonstration data. It does not connect to a wallet, execute trades, or run the agents shown on screen. The next integration step is to connect these surfaces to an authenticated orchestration backend without weakening the approval boundaries.
+Carina is a polished front-end prototype. The next integration step is to connect selected surfaces to an authenticated local orchestration backend without weakening the approval boundaries or changing the hosted demo into an implied live system.
 
 ## Stack
 
