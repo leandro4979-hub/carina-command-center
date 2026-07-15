@@ -1,0 +1,7 @@
+#!/bin/sh
+# Pre-commit hook to run linting on staged files
+# This hook runs npm lint if dependencies are installed
+
+if [ -d "node_modules" ]; then
+  npm run lint
+fi
